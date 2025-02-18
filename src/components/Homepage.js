@@ -4,15 +4,14 @@ import data from "../data";
 export default function HomePage() {
     const [username, setUsername] = useState("wolfstrix360");
     const [profile, setProfile] = useState("Leetcode");
-    const [profileData, setProfileData] = useState({});
 
     const handleSearch = () => {
         if (username.trim() !== "") {
             console.log("Fetching data for:", username);
         }
-
+        
         const selectedProfile = data.profiles.find((p) => p.name === profile);
-
+        
         if (!selectedProfile) {
             console.error("Profile not found!");
             return;
@@ -20,15 +19,7 @@ export default function HomePage() {
 
         const url = selectedProfile.baseurl + username;
         console.log("Opening URL:", url);
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                setProfileData(data);
-            })
-            .catch((error) => {
-                throw error;
-            });
+        
         window.open(url, "_blank");
     };
 
@@ -43,7 +34,7 @@ export default function HomePage() {
 
             {/* Search & Select Container */}
             <div className="w-full max-w-lg flex flex-col sm:flex-row items-center gap-4">
-
+                
                 {/* Search Input */}
                 <div className="flex items-center bg-gray-800 p-3 py-2 rounded-2xl shadow-lg w-full">
                     <input
