@@ -1,0 +1,45 @@
+
+/* Light Mode Scrollbar */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #60A5FA;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--first-color);
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--body-color);
+    border-radius: 8px;
+}
+
+/* Dark Mode Scrollbar */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--dark-body-color);
+    border-radius: 8px;
+}
+
+.scrollp {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Light Mode scrollbar for Firefox */
+.scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--first-color-alt) var(--body-color);
+}
+
+/* Typography */
+.about_h2 {
+    font-size: var(--h3-font-size);
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-0-75);
+}
